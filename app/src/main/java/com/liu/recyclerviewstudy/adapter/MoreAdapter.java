@@ -73,6 +73,11 @@ public class MoreAdapter extends RecyclerView.Adapter<MoreAdapter.ViewHolder> {
         notifyItemInserted(position);
     }
 
+    public void changeItem(int positon){
+        data.get(positon).setName("ChangeKrystal");
+        notifyItemChanged(positon);
+    }
+
     class ViewHolder extends RecyclerView.ViewHolder {
         private ImageView iv;
         private TextView name_tv;

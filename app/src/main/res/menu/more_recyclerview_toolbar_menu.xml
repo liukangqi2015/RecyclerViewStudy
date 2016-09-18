@@ -9,4 +9,7 @@
         android:id="@+id/remove_item"
         android:title="@string/remove_item"
        />
+    <item
+        android:id="@+id/change_item"
+        android:title="@string/change_item"/>
 </menu>

@@ -59,6 +59,9 @@ public class MoreRecyclerViewActivity extends AppCompatActivity {
                     case R.id.remove_item:
                         adapter.removeItem(1);
                         break;
+                    case R.id.change_item:
+                        adapter.changeItem(1);
+                        break;
                 }
                 return false;
             }
@@ -85,7 +88,7 @@ public class MoreRecyclerViewActivity extends AppCompatActivity {
             @Override
             public void onItemClickListener(View view, int position) {
                 TextView tv= ((TextView) view.findViewById(R.id.name_tv));
-                Toast.makeText(MoreRecyclerViewActivity.this,"position"+position+"--"+tv.getText(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(MoreRecyclerViewActivity.this,"position"+position+"--data"+data.get(position).getName()+"--TextView显示数据"+tv.getText(),Toast.LENGTH_SHORT).show();
             }
         });
         moreRecyclerView.setAdapter(adapter);
