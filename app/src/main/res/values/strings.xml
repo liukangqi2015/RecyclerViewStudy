@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">RecyclerViewStudy</string>
+    <string name="base_recyclerView_study">RecyclerView基本使用（三种布局管理器）</string>
+    <string name="linear_layout_manager">线性布局管理器</string>
+    <string name="grid_layout_manager">网格布局管理器</string>
+    <string name="StaggeredGrid_layout_manager">流式布局管理器</string>
+    <string name="more_recyclerView_study">RecyclerView添加分割线、局部更新、添加监听事件</string>
+    <string name="add_item">添加Item</string>
+    <string name="remove_item">移除Item</string>
+</resources>
