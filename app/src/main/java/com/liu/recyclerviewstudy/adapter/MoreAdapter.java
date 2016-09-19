@@ -1,6 +1,7 @@
 package com.liu.recyclerviewstudy.adapter;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ import java.util.List;
  * Created by lkq on 2016/9/14.
  */
 public class MoreAdapter extends RecyclerView.Adapter<MoreAdapter.ViewHolder> {
+    private static final String TAG=MoreAdapter.class.getSimpleName();
     private List<Krystal> data;
 
     private OnItemClickListener onItemclickListener;
@@ -27,12 +29,14 @@ public class MoreAdapter extends RecyclerView.Adapter<MoreAdapter.ViewHolder> {
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        Log.i(TAG,"onCreateViewHolder");
         View itemView= LayoutInflater.from(parent.getContext()).inflate(R.layout.more_recyclerview_item,parent,false);
         return new ViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
+        Log.i(TAG,"onBindViewHolder--position"+position);
         holder.name_tv.setText(data.get(position).getName());
         holder.iv.setImageResource(data.get(position).getImgId());
         if (onItemclickListener!=null){
@@ -51,6 +55,7 @@ public class MoreAdapter extends RecyclerView.Adapter<MoreAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
+        Log.i(TAG,"getItemCount"+data.size());
         return data.size();
     }
 
@@ -73,9 +78,9 @@ public class MoreAdapter extends RecyclerView.Adapter<MoreAdapter.ViewHolder> {
         notifyItemInserted(position);
     }
 
-    public void changeItem(int positon){
-        data.get(positon).setName("ChangeKrystal");
-        notifyItemChanged(positon);
+    public void changeItem(int position){
+        data.get(position).setName("ChangeKrystal");
+        notifyItemChanged(position);
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
