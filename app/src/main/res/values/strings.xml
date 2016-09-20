@@ -8,4 +8,5 @@
     <string name="add_item">添加Item</string>
     <string name="remove_item">移除Item</string>
     <string name="change_item">局部刷新Item</string>
+    <string name="recyclerView_many_layout_study">RecycleView多布局</string>
 </resources>

@@ -31,4 +31,10 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="@string/more_recyclerView_study"/>
+    <Button
+        android:id="@+id/recyclerView_many_layout_study_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/recyclerView_many_layout_study"/>
 </LinearLayout>
