@@ -35,15 +35,18 @@ public class MoreAdapter extends RecyclerView.Adapter<MoreAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, final int position) {
-        Log.i(TAG,"onBindViewHolder--position"+position);
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
+
         holder.name_tv.setText(data.get(position).getName());
         holder.iv.setImageResource(data.get(position).getImgId());
         if (onItemclickListener!=null){
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    onItemclickListener.onItemClickListener(view,position);
+                    Log.i(TAG,"onBindViewHolder--position"+position);
+                    Log.i(TAG,"onBindViewHolder--LayoutPosition()"+holder.getLayoutPosition());
+                    //注意，这里不能直接传入position（当插入或删除数据的时候，这个position会错乱），需要使用getLayoutPosition(),返回的才是Item在RecyclerView中布局位置
+                    onItemclickListener.onItemClickListener(view,holder.getLayoutPosition());
                 }
             });
         }
