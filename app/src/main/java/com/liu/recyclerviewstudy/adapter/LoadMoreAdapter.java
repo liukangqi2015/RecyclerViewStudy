@@ -21,13 +21,6 @@ public class LoadMoreAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     private static final int TYPE_ITEM = 0;  //普通Item View
     private static final int TYPE_FOOTER = 1;  //底部FootView
 
-    //上拉加载更多
-    public static final int  PULLUP_LOAD_MORE=0;
-    //正在加载中
-    public static final int  LOADING_MORE=1;
-    //上拉加载更多状态-默认为0
-    private int load_more_status=0;
-
     private List<Krystal> data;
 
     public LoadMoreAdapter(List<Krystal> data) {
@@ -53,15 +46,7 @@ public class LoadMoreAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             ((ViewHolder)holder).name_tv.setText(data.get(position).getName());
             ((ViewHolder)holder).iv.setImageResource(data.get(position).getImgId());
         }else if (holder instanceof FootViewHolder){
-            FootViewHolder footViewHolder=(FootViewHolder)holder;
-            switch (load_more_status){
-                case PULLUP_LOAD_MORE:
-                    footViewHolder.tv.setText("上拉加载更多...");
-                    break;
-                case LOADING_MORE:
-                    footViewHolder.tv.setText("正在加载更多数据...");
-                    break;
-            }
+
         }
 //
     }
@@ -107,8 +92,5 @@ public class LoadMoreAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
-    public void changeMoreStatus(int status){
-        load_more_status=status;
-        notifyDataSetChanged();
-    }
+
 }

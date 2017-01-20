@@ -81,9 +81,8 @@ public class RefreshAndLoadMoreActivity extends AppCompatActivity{
                                 newData.add(krystal);
                             }
                             adapter.addMoreItem(newData);
-                            adapter.changeMoreStatus(LoadMoreAdapter.PULLUP_LOAD_MORE);
                         }
-                    },1500);
+                    },2000);
                 }
             }
 
