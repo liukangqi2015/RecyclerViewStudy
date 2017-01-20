@@ -81,6 +81,7 @@ public class MoreRecyclerViewActivity extends AppCompatActivity {
     private void setData(){
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this);
         moreRecyclerView.setLayoutManager(linearLayoutManager);
+        moreRecyclerView.setHasFixedSize(true);
         moreRecyclerView.addItemDecoration(new DividerItemDecoration(this,LinearLayoutManager.VERTICAL));
         moreRecyclerView.setItemAnimator(new DefaultItemAnimator());
         adapter=new MoreAdapter(data);

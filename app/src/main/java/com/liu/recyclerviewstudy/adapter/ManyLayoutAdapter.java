@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 多Item布局的Adapter
  * Created by lkq on 2016/9/20.
  */
 public class ManyLayoutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {

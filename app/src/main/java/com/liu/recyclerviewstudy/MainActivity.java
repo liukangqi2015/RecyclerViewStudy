@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     Button moreRecyclerViewStudyBtn;
     @BindView(R.id.recyclerView_many_layout_study_btn)
     Button recyclerViewManyLayoutStudyBtn;
+    @BindView(R.id.recyclerView_refresh_and_loadMore_study_btn)
+    Button recyclerView_refresh_and_loadMore_study_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
-    @OnClick({R.id.base_recyclerView_study_btn, R.id.more_recyclerView_study_btn,R.id.recyclerView_many_layout_study_btn})
+    @OnClick({R.id.base_recyclerView_study_btn, R.id.more_recyclerView_study_btn,R.id.recyclerView_many_layout_study_btn,R.id.recyclerView_refresh_and_loadMore_study_btn})
     public void onClick(View v) {
 
 
@@ -44,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.recyclerView_many_layout_study_btn:
                 startActivity(new Intent(this,ManyLayoutRecyclerViewActivity.class));
+                break;
+            case R.id.recyclerView_refresh_and_loadMore_study_btn:
+                startActivity(new Intent(this,RefreshAndLoadMoreActivity.class));
                 break;
         }
     }
