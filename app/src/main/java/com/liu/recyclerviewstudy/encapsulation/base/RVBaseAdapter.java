@@ -2,32 +2,24 @@ package com.liu.recyclerviewstudy.encapsulation.base;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- * Created by liu on 2017/2/17.
+ * RecyclerView的基类Adapter
+ * Created by liu on 2017/3/6.
  */
 
-public abstract class RVBaseAdapter<C extends RVBaseCell> extends RecyclerView.Adapter<RVBaseViewHolder> {
-    public static final String TAG="RVBaseAdapter";
+public abstract class RVBaseAdapter<T> extends RecyclerView.Adapter<RVBaseViewHolder> {
+    private List<T> mDatas;
+    private int layoutID;
     private LayoutInflater inflater;
-    protected List<C> mData;
 
-    public RVBaseAdapter(){
-        mData = new ArrayList<>();
-    }
-
-    public void setData(List<C> data) {
-//        addAll(data);
-        notifyDataSetChanged();
-    }
-
-    public List<C> getData() {
-        return mData;
+    public RVBaseAdapter(int layoutID, List<T> mDatas) {
+        this.layoutID = layoutID;
+        this.mDatas = mDatas;
     }
 
     @Override
@@ -35,21 +27,19 @@ public abstract class RVBaseAdapter<C extends RVBaseCell> extends RecyclerView.A
         if (inflater==null){
             inflater=LayoutInflater.from(parent.getContext());
         }
-        return onCreateViewHolder(parent,viewType);
+        View view=inflater.inflate(layoutID,parent,false);
+        return new RVBaseViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(RVBaseViewHolder holder, int position) {
-
+        setData(holder,position,mDatas);
     }
 
     @Override
     public int getItemCount() {
-        return mData == null ? 0:mData.size();
+        return mDatas!=null?mDatas.size():0;
     }
 
-    @Override
-    public int getItemViewType(int position) {
-        return mData.get(position).getItemType();
-    }
+    public abstract void setData(RVBaseViewHolder viewHolder,int position,List<T> data);
 }
