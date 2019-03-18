@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.liu.ItemDecorationActivity;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -20,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     Button recyclerViewManyLayoutStudyBtn;
     @BindView(R.id.recyclerView_refresh_and_loadMore_study_btn)
     Button recyclerView_refresh_and_loadMore_study_btn;
+    @BindView(R.id.use_of_ItemDecoration_btn)
+    Button use_of_ItemDecoration_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +37,8 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
-    @OnClick({R.id.base_recyclerView_study_btn, R.id.more_recyclerView_study_btn,R.id.recyclerView_many_layout_study_btn,R.id.recyclerView_refresh_and_loadMore_study_btn})
+    @OnClick({R.id.base_recyclerView_study_btn, R.id.more_recyclerView_study_btn,R.id.recyclerView_many_layout_study_btn,R.id.recyclerView_refresh_and_loadMore_study_btn,
+    R.id.use_of_ItemDecoration_btn})
     public void onClick(View v) {
 
 
@@ -49,6 +54,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.recyclerView_refresh_and_loadMore_study_btn:
                 startActivity(new Intent(this,RefreshAndLoadMoreActivity.class));
+                break;
+            case R.id.use_of_ItemDecoration_btn:
+                startActivity(new Intent(this, ItemDecorationActivity.class));
                 break;
         }
     }

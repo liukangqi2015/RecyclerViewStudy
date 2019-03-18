@@ -19,6 +19,7 @@
         <activity android:name=".MoreRecyclerViewActivity" />
         <activity android:name=".ManyLayoutRecyclerViewActivity"/>
         <activity android:name=".RefreshAndLoadMoreActivity"/>
+        <activity android:name="com.liu.ItemDecorationActivity" />
     </application>
 
 </manifest>

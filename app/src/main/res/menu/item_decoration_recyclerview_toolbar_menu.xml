@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <item
+        android:id="@+id/vertica"
+        android:title="@string/vertica"
+       />
+    <!--<item
+        android:id="@+id/grid_layout_manager"
+        android:title="@string/grid_layout_manager"
+       />
+    <item
+        android:id="@+id/staggeredGrid_layout_manager"
+        android:title="@string/StaggeredGrid_layout_manager"
+       />-->
+</menu>
