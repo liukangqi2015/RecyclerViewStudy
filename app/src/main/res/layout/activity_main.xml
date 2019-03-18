@@ -24,24 +24,35 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:textAllCaps="false"
         android:text="@string/base_recyclerView_study" />
     <Button
         android:id="@+id/more_recyclerView_study_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:textAllCaps="false"
         android:text="@string/more_recyclerView_study"/>
+    <Button
+        android:id="@+id/use_of_ItemDecoration_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textAllCaps="false"
+        android:text="@string/use_of_ItemDecoration"/>
     <Button
         android:id="@+id/recyclerView_many_layout_study_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:textAllCaps="false"
         android:text="@string/recyclerView_many_layout_study"/>
     <Button
         android:id="@+id/recyclerView_refresh_and_loadMore_study_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:textAllCaps="false"
         android:text="@string/recycler_refresh_and_loadMore"/>
 
 </LinearLayout>
